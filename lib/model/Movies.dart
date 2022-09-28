@@ -1,9 +1,9 @@
 
 import 'dart:convert';
 
-Movies newsModelFromJson(String str) => Movies.fromJson(json.decode(str));
+Movies moviesModelFromJson(String str) => Movies.fromJson(json.decode(str));
 
-String newsModelToJson(Movies data) => json.encode(data.toJson());
+String moviesModelToJson(Movies data) => json.encode(data.toJson());
 
 
 class Movies {
@@ -17,7 +17,7 @@ class Movies {
     if (json['Search'] != null) {
       search = <Search>[];
       json['Search'].forEach((v) {
-        search!.add(new Search.fromJson(v));
+        search!.add(Search.fromJson(v));
       });
     }
     totalResults = json['totalResults'];
